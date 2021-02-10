@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Genius"
+    }
+  },
+  "defaultProject": "Genius",
+  "cli": {
+    "analytics": false
+  }
 }
