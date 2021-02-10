@@ -3,10 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BackGroundComponent } from './common/back-ground/back-ground.component';
+import { HomeComponent } from './views/home/home.component';
+import { InGameComponent } from './views/in-game/in-game.component';
+import { EndGameComponent } from './views/end-game/end-game.component';
+import { RankComponent } from './views/rank/rank.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BackGroundComponent,
+    HomeComponent,
+    InGameComponent,
+    EndGameComponent,
+    RankComponent
   ],
   imports: [
     BrowserModule,
