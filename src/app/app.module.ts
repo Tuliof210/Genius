@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { BackGroundComponent } from './common/back-ground/back-ground.component';
 import { HomeComponent } from './views/home/home.component';
@@ -16,13 +16,10 @@ import { RankComponent } from './views/rank/rank.component';
     HomeComponent,
     InGameComponent,
     EndGameComponent,
-    RankComponent
+    RankComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
