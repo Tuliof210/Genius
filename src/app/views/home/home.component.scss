@@ -1,0 +1,23 @@
+@import './../../../assets/styles/colors.scss';
+@import './../../../assets/styles/elements.scss';
+
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#game-logo {
+  height: $height;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-logo img {
+  width: $width * 0.7;
+  padding: 0 10px;
+  max-width: 100vw;
+}

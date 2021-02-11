@@ -1,0 +1,11 @@
+@import './colors.scss';
+
+// shadows
+$shadow: 1px 1px 10px $default_shadowcolor;
+
+// proportions
+$height: 800px;
+$width: 0.6 * $height;
+
+// mobile
+$mobile_size: 600px;

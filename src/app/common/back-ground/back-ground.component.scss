@@ -1,0 +1,21 @@
+@import './../../../assets/styles/colors.scss';
+@import './../../../assets/styles/elements.scss';
+
+.app-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $default_gray;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  width: $width;
+  max-width: 100vw;
+  height: $height;
+  box-shadow: $shadow;
+  background-color: $default_dark_blue;
+}
+
+@media screen and (max-width: $mobile_size) {
+}
