@@ -5,8 +5,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  readonly logoAlt = 'JS G3niu5';
-  readonly logoDirecoty = '../../../assets/images/logo.svg';
+  readonly logo = {
+    src: '../../../assets/images/logo.svg',
+    alt: 'JS G3niu5',
+  };
+  readonly rank = {
+    src: '../../../assets/images/ranking.svg',
+    alt: 'Ranking btn',
+  };
 
   constructor() {}
 

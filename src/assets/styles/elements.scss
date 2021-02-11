@@ -1,11 +1,27 @@
 @import './colors.scss';
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Roboto-Medium.ttf');
+}
 
 // shadows
 $shadow: 1px 1px 10px $default_shadowcolor;
+$btn_shadow: 1px 1px 3px $default_shadowcolor;
 
 // proportions
-$height: 800px;
+$height: 850px;
 $width: 0.6 * $height;
 
-// mobile
-$mobile_size: 600px;
+// default font
+$default_Font: 'Inter';
+
+// button base
+.base-btn {
+  color: $default_light_brown;
+  background-color: $default_blue;
+  border: 3px solid $default_gray;
+  font-family: $default_Font;
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+}
