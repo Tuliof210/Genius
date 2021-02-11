@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'play', component: InGameComponent },
       { path: 'finish', component: EndGameComponent },
-      { path: 'rank', component: RankComponent },
+      { path: 'ranking', component: RankComponent },
     ],
   },
   // handle wrong urls

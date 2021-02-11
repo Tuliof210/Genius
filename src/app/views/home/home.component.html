@@ -1,11 +1,11 @@
-<div class="home-wrapper">
-  <div id="game-rank">
-    <img src="{{ rank.src }}" alt="{{ rank.alt }}" />
+<div class="main-wrapper">
+  <div (click)="showRanking()" id="game-rank">
+    <img [src]="rank.src" [alt]="rank.alt" />
   </div>
   <div id="game-logo">
-    <img src="{{ logo.src }}" alt="{{ logo.alt }}" />
+    <img [src]="logo.src" [alt]="logo.alt" />
   </div>
   <div id="game-btn">
-    <button class="base-btn">Iniciar o Jogo</button>
+    <button (click)="start()" class="base-btn">Iniciar o Jogo</button>
   </div>
 </div>

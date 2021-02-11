@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpService } from '../../services/http.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,7 +16,20 @@ export class HomeComponent implements OnInit {
     alt: 'Ranking btn',
   };
 
-  constructor() {}
+  constructor(
+    private readonly router: Router,
+    private readonly httpService: HttpService
+  ) {}
 
   ngOnInit(): void {}
+
+  // Start game
+  start() {
+    this.router.navigate(['play']);
+  }
+
+  // Show ranking
+  showRanking() {
+    this.router.navigate(['ranking']);
+  }
 }
