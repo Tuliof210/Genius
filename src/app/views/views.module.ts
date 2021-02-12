@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 // Components
 import { HomeComponent } from './home/home.component';
@@ -14,7 +15,7 @@ import { RankComponent } from './rank/rank.component';
     EndGameComponent,
     RankComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   exports: [HomeComponent, InGameComponent, EndGameComponent, RankComponent],
 })
 export class ViewsModule {}

@@ -1,1 +1,11 @@
-<div class="main-wrapper"></div>
+<div class="main-wrapper">
+  <div (click)="playAgain()" id="close-window">
+    <img [src]="closeIcon.src" [alt]="closeIcon.alt" />
+  </div>
+  <div id="user-input">
+    <input [(ngModel)]="userName" (keyup)="displayInfo($event)" type="text" />
+  </div>
+  <div id="save-score-btn">
+    <button (click)="saveScore()" class="base-btn">Iniciar o Jogo</button>
+  </div>
+</div>
