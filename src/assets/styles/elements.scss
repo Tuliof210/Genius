@@ -9,8 +9,9 @@ $shadow: 1px 1px 10px $default_shadowcolor;
 $btn_shadow: 1px 1px 3px $default_shadowcolor;
 
 // proportions [ figma 360 x 600 => 0,6]
-$height: 850px;
-$width: 0.6 * $height;
+
+$width: 500px;
+$height: $width / 0.6;
 
 // default font
 $default_Font: 'Inter';
