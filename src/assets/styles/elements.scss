@@ -1,7 +1,15 @@
 @import './colors.scss';
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Roboto';
   src: url('../fonts/Roboto-Medium.ttf');
+}
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto Thin';
+  src: url('../fonts/Roboto-Thin.ttf');
 }
 
 // shadows
@@ -14,7 +22,9 @@ $width: 500px;
 $height: $width / 0.6;
 
 // default font
-$default_Font: 'Inter';
+$FontMedium: 'Roboto';
+$FontRegular: 'Roboto Regular';
+$FontThin: 'Roboto Thin';
 
 // Wrapper base
 .main-wrapper {
@@ -29,7 +39,7 @@ $default_Font: 'Inter';
   color: $default_light_brown;
   background-color: $default_blue;
   border: 3px solid $default_gray;
-  font-family: $default_Font;
+  font-family: $FontMedium;
   border-radius: 10px;
   box-sizing: border-box;
   outline: none;
