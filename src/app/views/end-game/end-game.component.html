@@ -2,10 +2,20 @@
   <div (click)="playAgain()" id="close-window">
     <img [src]="closeIcon.src" [alt]="closeIcon.alt" />
   </div>
+  <div id="finalScore" class="fade-in">
+    <h2>Fim do Jogo</h2>
+    <h3>score</h3>
+    <h1>{{ score }}</h1>
+  </div>
   <div id="user-input">
-    <input [(ngModel)]="userName" (keyup)="displayInfo($event)" type="text" />
+    <input
+      type="text"
+      class="base-input"
+      [(ngModel)]="userName"
+      placeholder="Digite seu nome"
+    />
   </div>
   <div id="save-score-btn">
-    <button (click)="saveScore()" class="base-btn">Iniciar o Jogo</button>
+    <button (click)="saveScore()" class="base-btn">Salvar Ranking</button>
   </div>
 </div>

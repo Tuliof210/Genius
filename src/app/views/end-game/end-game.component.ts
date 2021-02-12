@@ -25,8 +25,7 @@ export class EndGameComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.score = 850;
-    //this.userName = 'Venom';
+    this.score = 80;
   }
 
   playAgain() {
@@ -46,6 +45,9 @@ export class EndGameComponent implements OnInit {
       )
       .subscribe((posted) => {
         console.log({ posted });
+
+        // Add Loader spin
+        this.playAgain();
       });
   }
 

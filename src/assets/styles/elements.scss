@@ -44,3 +44,17 @@ $FontThin: 'Roboto Thin';
   box-sizing: border-box;
   outline: none;
 }
+
+.base-input {
+  color: $default_light_brown;
+  background-color: $default_dark_blue;
+  border: 3px solid $default_blue;
+  font-family: $FontMedium;
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0 15px;
+}
+.base-input::placeholder {
+  color: $default_gray;
+}
