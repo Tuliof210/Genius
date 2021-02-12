@@ -1,7 +1,19 @@
 @import './colors.scss';
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Roboto';
   src: url('../fonts/Roboto-Medium.ttf');
+}
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto Thin';
+  src: url('../fonts/Roboto-Thin.ttf');
+}
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('../fonts/Roboto-Light.ttf');
 }
 
 // shadows
@@ -9,11 +21,15 @@ $shadow: 1px 1px 10px $default_shadowcolor;
 $btn_shadow: 1px 1px 3px $default_shadowcolor;
 
 // proportions [ figma 360 x 600 => 0,6]
-$height: 850px;
-$width: 0.6 * $height;
+
+$width: 500px;
+$height: $width / 0.6;
 
 // default font
-$default_Font: 'Inter';
+$FontMedium: 'Roboto';
+$FontRegular: 'Roboto Regular';
+$FontThin: 'Roboto Thin';
+$FontLight: 'Roboto Light';
 
 // Wrapper base
 .main-wrapper {
@@ -28,8 +44,24 @@ $default_Font: 'Inter';
   color: $default_light_brown;
   background-color: $default_blue;
   border: 3px solid $default_gray;
-  font-family: $default_Font;
+  font-family: $FontMedium;
+  font-weight: normal;
   border-radius: 10px;
   box-sizing: border-box;
   outline: none;
+}
+
+.base-input {
+  color: $default_light_brown;
+  background-color: $default_dark_blue;
+  border: 3px solid $default_blue;
+  font-family: $FontRegular;
+  font-weight: normal;
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0 15px;
+}
+.base-input::placeholder {
+  color: $default_gray;
 }

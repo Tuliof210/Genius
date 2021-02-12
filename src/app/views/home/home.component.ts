@@ -25,7 +25,9 @@ export class HomeComponent implements OnInit {
 
   // Start game
   start() {
-    this.router.navigate(['play']);
+    //this.router.navigate(['play']);
+    // then =>
+    this.router.navigate(['finish']);
   }
 
   // Show ranking

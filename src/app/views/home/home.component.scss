@@ -1,12 +1,6 @@
 @import './../../../assets/styles/colors.scss';
 @import './../../../assets/styles/elements.scss';
-
-.main-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import './../../../assets/styles/animation.scss';
 
 // Game logo
 #game-logo {
@@ -46,8 +40,8 @@
   height: $height * 0.13;
   max-width: 95vw;
   font-size: $width * 0.066;
-  transition-property: all;
-  transition-duration: 0.3s;
+  // transition-property: all;
+  // transition-duration: 0.3s;
 }
 #game-btn .base-btn:hover {
   box-shadow: $shadow;
@@ -69,7 +63,9 @@
   #game-rank img {
   }
   #game-btn {
+    width: 85%;
     box-sizing: border-box;
+    //bottom: 100vh * 0.03;
   }
   #game-btn .base-btn {
   }

@@ -1,5 +1,6 @@
 @import './../../../assets/styles/colors.scss';
 @import './../../../assets/styles/elements.scss';
+@import './../../../assets/styles/animation.scss';
 
 .app-background {
   display: flex;
@@ -10,12 +11,16 @@
 }
 
 .app-wrapper {
+  position: relative;
   width: $width;
-  max-width: 100vw;
   height: $height;
   box-shadow: $shadow;
   background-color: $default_dark_blue;
 }
 
 @media screen and (max-width: $width) {
+  .app-wrapper,
+  .app-background {
+    width: 100%;
+  }
 }

@@ -1,1 +1,19 @@
-<div class="main-wrapper"></div>
+<div class="main-wrapper rank-wrapper">
+  <div class="header">
+    <div (click)="goBackHome()" id="come-back">
+      <img [src]="comeBack.src" [alt]="comeBack.alt" />
+    </div>
+    <h1>Ranking</h1>
+  </div>
+  <div class="list-players">
+    <div
+      *ngFor="let player of rankListView"
+      class="row fade-in"
+      [ngClass]="{ podium: player.pos <= 3 }"
+    >
+      <h1 class="user-position">{{ player.pos }}</h1>
+      <h1 class="user-name">{{ player.name }}</h1>
+      <h1 class="user-score">{{ player.score }}</h1>
+    </div>
+  </div>
+</div>

@@ -11,8 +11,13 @@ import { map, takeUntil } from 'rxjs/operators';
 })
 export class RankComponent implements OnInit {
   private readonly _ngUnsubscribe: Subject<any> = new Subject();
+  readonly comeBack = {
+    src: '../../../assets/images/voltar.svg',
+    alt: 'Come back btn',
+  };
 
   rankList: any;
+  rankListView: any[];
 
   constructor(
     private readonly router: Router,
@@ -24,6 +29,7 @@ export class RankComponent implements OnInit {
   }
 
   getRanking() {
+    this.rankList = [];
     this.httpService
       .GetService('ranking')
       .pipe(
@@ -38,18 +44,22 @@ export class RankComponent implements OnInit {
   }
 
   printRankList() {
-    console.log(this.rankList);
+    console.log(this.rankListView);
   }
 
   normalizeData() {
     // Ordenar do maior para o menor
     this.rankList = this.rankList.sort((a, b) => b['score'] - a['score']);
     // Normalizar dados recebidos
-    this.rankList = this.rankList.map((user, index) => ({
+    this.rankListView = this.rankList.map((user, index) => ({
       pos: 1 + index,
       name: user['name'],
       score: user['score'],
     }));
+  }
+
+  goBackHome() {
+    this.router.navigate(['']);
   }
 
   ngOnDestroy(): void {
