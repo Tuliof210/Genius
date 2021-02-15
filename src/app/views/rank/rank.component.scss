@@ -32,6 +32,7 @@
   display: block;
   max-height: $height * 0.83;
   overflow-y: auto;
+  cursor: default;
 }
 .row {
   display: flex;
@@ -59,7 +60,7 @@
   padding-left: 35px;
 }
 .user-score {
-  width: 100%;
+  //width: 100%;
   text-align: right;
   padding-right: 40px;
 }

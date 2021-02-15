@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Common
-import { BackGroundComponent } from './common/back-ground/back-ground.component';
+import { BackGroundComponent } from './common/layouts/back-ground.component';
 
 // Modules with components
 import { ViewsModule } from './views/views.module';

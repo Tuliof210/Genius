@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostListener, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
@@ -16,20 +16,29 @@ export class EndGameComponent implements OnInit {
     alt: 'Close btn',
   };
 
-  @Input() score: number;
+  score;
   userName: string;
 
   constructor(
+    private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly httpService: HttpService
   ) {}
 
+  @HostListener('window:keydown', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.key === 'Enter' && this.userName) {
+      this.saveScore();
+      //return false;
+    }
+  }
+
   ngOnInit(): void {
-    this.score = 80;
+    this.score = parseInt(this.route.snapshot.paramMap.get('score'));
   }
 
   playAgain() {
-    this.router.navigate(['']);
+    this.router.navigate(['/ranking']);
   }
 
   saveScore() {
@@ -44,15 +53,9 @@ export class EndGameComponent implements OnInit {
         takeUntil(this._ngUnsubscribe)
       )
       .subscribe((posted) => {
-        console.log({ posted });
-
         // Add Loader spin
         this.playAgain();
       });
-  }
-
-  displayInfo(event) {
-    console.log({ key: event.key, user: this.userName });
   }
 
   ngOnDestroy(): void {

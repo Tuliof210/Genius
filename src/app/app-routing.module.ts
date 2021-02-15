@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Template
-import { BackGroundComponent } from './common/back-ground/back-ground.component';
+import { BackGroundComponent } from './common/layouts/back-ground.component';
 
 // Components
 import { HomeComponent } from './views/home/home.component';

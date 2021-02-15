@@ -16,6 +16,11 @@
     />
   </div>
   <div id="save-score-btn">
-    <button (click)="saveScore()" class="base-btn">Salvar Ranking</button>
+    <button
+      (click)="!!userName && saveScore()"
+      [ngClass]="{ 'base-btn': true, disabled: !userName }"
+    >
+      Salvar Ranking
+    </button>
   </div>
 </div>
