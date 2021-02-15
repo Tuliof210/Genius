@@ -12,6 +12,8 @@ export class InGameComponent implements OnInit {
   order = [];
   display = 0;
 
+  canPlay = false;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -20,6 +22,7 @@ export class InGameComponent implements OnInit {
 
   start() {
     setTimeout(() => {
+      this.canPlay = true;
       this.newRound();
     }, 2000);
   }
@@ -61,5 +64,9 @@ export class InGameComponent implements OnInit {
     const playerTry = Math.floor(Math.random() * 10);
     console.log({ playerTry });
     return num === playerTry;
+  }
+
+  getBtnValue(event) {
+    console.log(event);
   }
 }

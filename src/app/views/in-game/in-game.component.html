@@ -3,5 +3,9 @@
     <p class="view">{{ display }}</p>
     <!-- <p *ngIf="!Playing" class="view">{{ flag }}</p> -->
   </div>
-  <div id="keyboard">Teclado</div>
+  <key-board
+    id="keyboard"
+    [canPlay]="canPlay"
+    (sendButtonValue)="getBtnValue($event)"
+  ></key-board>
 </div>
