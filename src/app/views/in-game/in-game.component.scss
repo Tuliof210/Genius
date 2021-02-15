@@ -1,0 +1,39 @@
+@import './../../../assets/styles/colors.scss';
+@import './../../../assets/styles/elements.scss';
+@import './../../../assets/styles/animation.scss';
+
+.main-wrapper {
+  position: relative;
+  display: block;
+}
+
+#display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $width * 0.26;
+  margin: 60px auto 40px;
+  padding: $width * 0.1;
+
+  border: 3px solid $default_light_brown;
+  border-radius: 5px;
+
+  text-align: center;
+  align-items: center;
+}
+.view {
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+
+  font-family: $FontLight;
+  font-size: $width * 0.26;
+  line-height: $width * 0.26;
+  color: $default_light_brown;
+}
+
+// MEDIA QUERIES
+//===============================================
+@media screen and (max-width: $width) {
+}

@@ -1,0 +1,26 @@
+<div class="main-wrapper">
+  <div (click)="playAgain()" id="close-window">
+    <img [src]="closeIcon.src" [alt]="closeIcon.alt" />
+  </div>
+  <div id="finalScore">
+    <h2>Fim do Jogo</h2>
+    <h3 class="fade-in">score</h3>
+    <h1 class="fade-in">{{ score }}</h1>
+  </div>
+  <div id="user-input">
+    <input
+      type="text"
+      class="base-input"
+      [(ngModel)]="userName"
+      placeholder="Digite seu nome"
+    />
+  </div>
+  <div id="save-score-btn">
+    <button
+      (click)="!!userName && saveScore()"
+      [ngClass]="{ 'base-btn': true, disabled: !userName }"
+    >
+      Salvar Ranking
+    </button>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+@import './../../../assets/styles/colors.scss';
+@import './../../../assets/styles/elements.scss';
+@import './../../../assets/styles/animation.scss';
+
+.app-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $default_gray;
+  background: linear-gradient(to bottom, $fromColor, $toColor);
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  position: relative;
+  width: $width;
+  height: $height;
+  box-shadow: $shadow;
+  background-color: $default_dark_blue;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: $width) {
+  .app-wrapper,
+  .app-background {
+    width: 100%;
+  }
+}

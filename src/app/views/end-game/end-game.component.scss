@@ -1,0 +1,97 @@
+@import './../../../assets/styles/colors.scss';
+@import './../../../assets/styles/elements.scss';
+@import './../../../assets/styles/animation.scss';
+
+#close-window {
+  cursor: pointer;
+  position: absolute;
+  top: $width * 0.05;
+  right: $width * 0.05;
+}
+#close-window {
+  width: $width * 0.08;
+}
+
+// Final score
+#finalScore {
+  height: $height;
+  position: relative;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: $height / 7;
+
+  color: $default_light_brown;
+  font-weight: normal;
+}
+#finalScore h1 {
+  font-family: $FontLight;
+  font-size: $width * 0.26;
+}
+#finalScore h2 {
+  font-family: $FontLight;
+  font-size: $width * 0.13;
+}
+#finalScore h3 {
+  margin-top: 120px;
+  font-family: $FontThin;
+  font-size: $width * 0.05;
+}
+
+// input
+#user-input {
+  position: absolute;
+  bottom: $height * 0.18;
+  display: flex;
+  justify-content: center;
+}
+#user-input .base-input {
+  width: $width * 0.9;
+  height: $height * 0.13;
+  max-width: 90vw;
+  font-size: $width * 0.066;
+}
+
+// Game button save
+#save-score-btn {
+  position: absolute;
+  bottom: $height * 0.03;
+  display: flex;
+  justify-content: center;
+}
+#save-score-btn .base-btn {
+  width: $width * 0.9;
+  height: $height * 0.13;
+  max-width: 95vw;
+  font-size: $width * 0.066;
+}
+#save-score-btn .base-btn:hover {
+  box-shadow: $shadow;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: default !important;
+}
+
+// MEDIA QUERIES
+//===============================================
+@media screen and (max-width: $width) {
+  // input
+  #user-input {
+    width: 90%;
+    box-sizing: border-box;
+  }
+  #user-input .base-input {
+  }
+  #save-score-btn {
+    width: 90%;
+    box-sizing: border-box;
+    //bottom: 100vh * 0.03;
+  }
+  #save-score-btn .base-btn {
+  }
+  #save-score-btn .base-btn:hover {
+  }
+}

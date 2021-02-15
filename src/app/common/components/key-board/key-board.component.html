@@ -1,0 +1,9 @@
+<div id="keyboard" [ngClass]="{ disabled: !canPlay }">
+  <button
+    class="base-btn keyboard-btn"
+    *ngFor="let btn of BUTTONS"
+    (click)="buttonPress(btn)"
+  >
+    {{ btn }}
+  </button>
+</div>

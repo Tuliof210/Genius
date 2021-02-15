@@ -1,0 +1,71 @@
+@import './../../../assets/styles/colors.scss';
+@import './../../../assets/styles/elements.scss';
+@import './../../../assets/styles/animation.scss';
+
+.rank-wrapper {
+  display: block;
+}
+
+.header {
+  position: relative;
+  margin-top: $height * 0.04;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.header h1 {
+  font-family: $FontRegular;
+  font-size: $width * 0.066;
+  font-weight: normal;
+  text-align: center;
+  color: $default_light_brown;
+}
+
+#come-back {
+  cursor: pointer;
+}
+#come-back img {
+  position: absolute;
+  left: $width * 0.05;
+}
+
+.list-players {
+  display: block;
+  max-height: $height * 0.83;
+  overflow-y: auto;
+  cursor: default;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.row > h1 {
+  font-family: $FontRegular;
+  font-size: $width * 0.066;
+  font-weight: normal;
+  color: $default_blue;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.podium > h1 {
+  color: $default_gray !important;
+}
+.user-position {
+  text-align: left;
+  padding-left: 40px;
+}
+.user-name {
+  width: 100%;
+  text-align: left;
+  padding-left: 35px;
+}
+.user-score {
+  //width: 100%;
+  text-align: right;
+  padding-right: 40px;
+}
+
+// MEDIA QUERIES
+//===============================================
+@media screen and (max-width: $width) {
+}

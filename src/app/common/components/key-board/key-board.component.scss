@@ -1,0 +1,48 @@
+@import '../../../../assets/styles/colors.scss';
+@import '../../../../assets/styles/animation.scss';
+@import '../../../../assets/styles/elements.scss';
+
+#keyboard {
+  width: 450px;
+
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: 0;
+  margin: auto;
+  display: grid;
+
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+
+  margin: 20px auto 0;
+  border: 3px solid $default_blue;
+
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.keyboard-btn {
+  border-radius: 0;
+  border-color: $default_blue;
+  background-color: $default_dark_blue;
+
+  color: $default_gray;
+  font-size: $width * 0.15;
+}
+.keyboard-btn:hover {
+  cursor: pointer;
+}
+.keyboard-btn:active {
+  background-color: $default_blue;
+}
+
+.disabled {
+  opacity: 0.2;
+}
+.disabled .keyboard-btn:hover {
+  cursor: default;
+}
+.disabled .keyboard-btn:active {
+  background-color: $default_dark_blue;
+}
