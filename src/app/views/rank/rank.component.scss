@@ -32,6 +32,7 @@
   display: block;
   max-height: $height * 0.83;
   overflow-y: auto;
+  cursor: default;
 }
 .row {
   display: flex;
