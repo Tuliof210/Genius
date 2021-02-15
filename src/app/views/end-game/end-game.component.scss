@@ -70,6 +70,11 @@
   cursor: pointer;
 }
 
+.disabled {
+  opacity: 0.3;
+  cursor: default !important;
+}
+
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {

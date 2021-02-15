@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
 
   // Start game
   start() {
-    //this.router.navigate(['play']);
-    // then =>
     this.router.navigate(['play']);
   }
 

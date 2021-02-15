@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'in-game',
@@ -6,67 +7,73 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./in-game.component.scss'],
 })
 export class InGameComponent implements OnInit {
+  canPlay = false;
   countDown;
 
-  currentScore = 0;
+  showDisplay;
+  display;
   order = [];
-  display = 0;
 
-  canPlay = false;
+  currentScore = 0;
+  playsToScore;
+  playerTry;
 
-  constructor() {}
+  constructor(private readonly router: Router) {}
 
   ngOnInit(): void {
+    this.showDisplay = false;
     this.start();
   }
 
   start() {
     setTimeout(() => {
-      this.canPlay = true;
       this.newRound();
     }, 2000);
   }
 
   newRound() {
-    this.order.push(Math.floor(Math.random() * 10));
+    this.canPlay = false;
+    this.playerTry = 0;
+    this.order.push(Math.floor(Math.random() * 10) || 1);
     this.displayValue(0, this.order.length);
   }
 
   displayValue(index, max) {
     this.display = this.order[index];
+    if (!this.showDisplay) this.showDisplay = true;
+
     index++;
-    if (index === max) this.simulatePlayer();
-    else
+    if (index === max) {
+      setTimeout(() => {
+        this.showDisplay = false;
+      }, 500);
+      this.canPlay = true;
+      this.playsToScore = this.order.length;
+    } else
       setTimeout(() => {
         this.displayValue(index, max);
       }, 300);
   }
 
-  simulatePlayer() {
-    let score = true;
-    for (let num of this.order) {
-      if (this.play(num)) continue;
-      else {
-        score = false;
-        break;
-      }
-    }
-    if (score) {
-      this.currentScore += 1;
-      this.newRound();
-    } else
-      console.log('Finish', this.order, {
-        finalScore: this.currentScore,
-      });
-  }
-
-  play(num) {
-    const playerTry = Math.floor(Math.random() * 10);
-    console.log({ playerTry });
-    return num === playerTry;
-  }
-
   getBtnValue(event) {
-    console.log(event);
+    if (this.order[this.playerTry] === event) {
+      this.playerTry += 1;
+      if (this.playerTry === this.playsToScore) {
+        this.currentScore += 1;
+        this.newRound();
+      }
+    } else {
+      //this.resetGame();
+      this.router.navigate(['finish', { score: this.currentScore }]);
+    }
+  }
+
+  resetGame() {
+    this.canPlay = false;
+
+    this.display = 0;
+    this.order = [];
+
+    this.currentScore = 0;
   }
 }

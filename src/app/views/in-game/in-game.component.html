@@ -1,7 +1,7 @@
-<div class="main-wrapper">
+<div class="main-wrapper fade-in">
   <div id="display">
-    <p class="view">{{ display }}</p>
-    <!-- <p *ngIf="!Playing" class="view">{{ flag }}</p> -->
+    <p *ngIf="showDisplay" class="view">{{ display }}</p>
+    <p *ngIf="!showDisplay" class="view">...</p>
   </div>
   <key-board
     id="keyboard"

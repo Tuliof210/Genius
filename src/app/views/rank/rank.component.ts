@@ -39,12 +39,7 @@ export class RankComponent implements OnInit {
       .subscribe((rank) => {
         this.rankList = rank;
         this.normalizeData();
-        this.printRankList();
       });
-  }
-
-  printRankList() {
-    console.log(this.rankListView);
   }
 
   normalizeData() {

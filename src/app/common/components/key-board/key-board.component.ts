@@ -13,9 +13,7 @@ export class KeyBoardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log({ canPlay: this.canPlay });
-  }
+  ngOnInit(): void {}
 
   buttonPress(value) {
     if (this.canPlay) this.sendButtonValue.emit(value);
