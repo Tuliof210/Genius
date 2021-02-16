@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $default_gray;
   background: linear-gradient(to bottom, $fromColor, $toColor);
   min-height: 100vh;
 }

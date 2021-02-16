@@ -32,10 +32,7 @@ export class EndGameComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (event.key === 'Enter' && this.userName) {
-      this.saveScore();
-      return false;
-    }
+    if (event.key === 'Enter' && this.userName) this.saveScore();
   }
 
   ngOnInit(): void {

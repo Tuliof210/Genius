@@ -24,10 +24,7 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
-      this.start();
-      return false;
-    }
+    if (event.key === 'Enter') this.start();
   }
 
   ngOnInit(): void {}
