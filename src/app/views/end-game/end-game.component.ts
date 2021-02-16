@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 // npm i @ngx-pwa/local-storage
@@ -25,7 +25,6 @@ export class EndGameComponent implements OnInit {
 
   constructor(
     private readonly storage: LocalStorage,
-    private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly httpService: HttpService
   ) {}

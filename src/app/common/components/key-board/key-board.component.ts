@@ -15,7 +15,7 @@ export class KeyBoardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  buttonPress(value) {
+  buttonPress(value): void {
     if (this.enabled) this.pressKey.emit(value);
   }
 }
