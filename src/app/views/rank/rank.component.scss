@@ -9,7 +9,7 @@
 .header {
   position: relative;
   margin-top: $height * 0.04;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   width: 100%;
 }
 .header h1 {
@@ -66,4 +66,19 @@
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {
+  .rank-wrapper {
+    height: $mobileHeight * 0.9;
+  }
+  .header {
+    padding-bottom: $mobileHeight * 0.05;
+  }
+  .header h1 {
+    font-size: $mobileWidth * 0.066;
+  }
+  .row > h1 {
+    font-size: $mobileWidth * 0.066;
+  }
+  .list-players {
+    max-height: $mobileHeight * 0.82;
+  }
 }
