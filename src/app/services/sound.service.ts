@@ -12,7 +12,7 @@ export class SoundService {
 
   press() {
     this.synth.volume.value = -20;
-    this.synth.triggerAttackRelease('F2', '2n');
+    this.synth.triggerAttackRelease('F4', '2n');
   }
 
   show() {
