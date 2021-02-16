@@ -32,7 +32,9 @@
   line-height: $width * 0.26;
   color: $default_light_brown;
 }
-
+.flag-view {
+  color: $default_blue;
+}
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {

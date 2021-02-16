@@ -61,8 +61,9 @@ export class InGameComponent implements OnInit {
     if (index === max) {
       setTimeout(() => {
         this.displayNumbers = false;
+        this.enableKeyboard = true;
       }, 300);
-      this.enableKeyboard = true;
+
       this.playsToScore = max;
     } else
       setTimeout(() => {
