@@ -64,7 +64,6 @@ export class EndGameComponent implements OnInit {
         takeUntil(this._ngUnsubscribe)
       )
       .subscribe((posted) => {
-        // Add Loader spin
         this.router.navigate(['/ranking']);
       });
   }
