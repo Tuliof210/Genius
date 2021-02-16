@@ -74,6 +74,16 @@
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {
+  .close-window {
+    // top: $width * 0.05;
+    // right: $width * 0.05;
+    width: 25px;
+    height: 25px;
+  }
+  .close-window img {
+    width: 25px;
+    height: 25px;
+  }
   #user-input {
     width: $mobileWidth * 0.9;
     box-sizing: border-box;
