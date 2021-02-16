@@ -60,7 +60,7 @@ export class InGameComponent implements OnInit {
 
   // executado recursivamente a cada 300ms ate que exiba toda a sequencia
   displayValue(index, max): void {
-    this.sound.show();
+    this.sound.displaySound();
     this.display = this.numList[index];
     this.displayNumbers = true;
 

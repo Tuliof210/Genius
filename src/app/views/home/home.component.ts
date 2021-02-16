@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // sound
 import { SoundService } from '../../services/sound.service';
@@ -22,17 +22,25 @@ export class HomeComponent implements OnInit {
     private readonly sound: SoundService
   ) {}
 
+  @HostListener('window:keydown', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.start();
+      return false;
+    }
+  }
+
   ngOnInit(): void {}
 
   // Start game
   start(): void {
-    this.sound.press();
+    this.sound.btnSound();
     this.router.navigate(['play']);
   }
 
   // Show ranking
   showRanking(): void {
-    this.sound.press();
+    this.sound.btnSound();
     this.router.navigate(['ranking']);
   }
 }

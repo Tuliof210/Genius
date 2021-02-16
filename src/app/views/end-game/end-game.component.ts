@@ -49,12 +49,12 @@ export class EndGameComponent implements OnInit {
   }
 
   playAgain(): void {
-    this.sound.press();
+    this.sound.btnSound();
     this.router.navigate(['']);
   }
 
   saveScore(): void {
-    this.sound.press();
+    this.sound.btnSound();
     this.disabled = true;
     const data = {
       name: this.userName,

@@ -56,7 +56,7 @@ export class RankComponent implements OnInit {
   }
 
   goBackHome(): void {
-    this.sound.press();
+    this.sound.btnSound();
     this.router.navigate(['']);
   }
 

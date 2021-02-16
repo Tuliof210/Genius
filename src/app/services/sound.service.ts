@@ -10,13 +10,13 @@ export class SoundService {
 
   constructor() {}
 
-  press() {
-    this.synth.volume.value = -20;
-    this.synth.triggerAttackRelease('F4', '2n');
+  btnSound() {
+    this.synth.volume.value = -25;
+    this.synth.triggerAttackRelease('c2', '1n');
   }
 
-  show() {
-    this.synth.volume.value = -10;
-    this.synth.triggerAttackRelease('C3', '2n');
+  displaySound() {
+    this.synth.volume.value = -15;
+    this.synth.triggerAttackRelease('d3', '5n');
   }
 }

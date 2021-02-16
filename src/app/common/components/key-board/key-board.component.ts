@@ -18,7 +18,7 @@ export class KeyBoardComponent implements OnInit {
 
   buttonPress(value): void {
     if (this.enabled) {
-      this.sound.press();
+      this.sound.btnSound();
       this.pressKey.emit(value);
     }
   }
