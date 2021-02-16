@@ -6,14 +6,17 @@ import * as Tone from 'tone';
   providedIn: 'root',
 })
 export class SoundService {
-  synth = new Tone.Synth().toDestination();
-  volume;
+  synth = new Tone.MembraneSynth().toDestination();
 
-  constructor() {
-    this.volume = this.synth['volume'].value = -5;
+  constructor() {}
+
+  press() {
+    this.synth.volume.value = -20;
+    this.synth.triggerAttackRelease('F2', '2n');
   }
 
-  playNote() {
-    this.synth.triggerAttackRelease('C2', '8n');
+  show() {
+    this.synth.volume.value = -10;
+    this.synth.triggerAttackRelease('C3', '2n');
   }
 }

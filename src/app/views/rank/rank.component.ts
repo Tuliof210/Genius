@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-
+// sound
+import { SoundService } from '../../services/sound.service';
 @Component({
   selector: 'app-rank',
   templateUrl: './rank.component.html',
@@ -21,7 +22,8 @@ export class RankComponent implements OnInit {
 
   constructor(
     private readonly router: Router,
-    private readonly httpService: HttpService
+    private readonly httpService: HttpService,
+    private readonly sound: SoundService
   ) {}
 
   ngOnInit(): void {
@@ -54,6 +56,7 @@ export class RankComponent implements OnInit {
   }
 
   goBackHome(): void {
+    this.sound.press();
     this.router.navigate(['']);
   }
 

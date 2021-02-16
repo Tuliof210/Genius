@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 // sound
 import { SoundService } from '../../services/sound.service';
 @Component({
@@ -23,17 +22,17 @@ export class HomeComponent implements OnInit {
     private readonly sound: SoundService
   ) {}
 
-  ngOnInit(): void {
-    this.sound.playNote();
-  }
+  ngOnInit(): void {}
 
   // Start game
   start(): void {
+    this.sound.press();
     this.router.navigate(['play']);
   }
 
   // Show ranking
   showRanking(): void {
+    this.sound.press();
     this.router.navigate(['ranking']);
   }
 }

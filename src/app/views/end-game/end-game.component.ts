@@ -6,7 +6,7 @@ import { map, takeUntil } from 'rxjs/operators';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 // custom
 import { HttpService } from '../../services/http.service';
-
+import { SoundService } from '../../services/sound.service';
 @Component({
   selector: 'end-game',
   templateUrl: './end-game.component.html',
@@ -26,6 +26,7 @@ export class EndGameComponent implements OnInit {
   constructor(
     private readonly storage: LocalStorage,
     private readonly router: Router,
+    private readonly sound: SoundService,
     private readonly httpService: HttpService
   ) {}
 
@@ -48,10 +49,12 @@ export class EndGameComponent implements OnInit {
   }
 
   playAgain(): void {
+    this.sound.press();
     this.router.navigate(['']);
   }
 
   saveScore(): void {
+    this.sound.press();
     this.disabled = true;
     const data = {
       name: this.userName,

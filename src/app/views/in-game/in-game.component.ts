@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 // npm i ngx-toastr
 import { ToastrService } from 'ngx-toastr';
-
+// sound
+import { SoundService } from '../../services/sound.service';
 @Component({
   selector: 'in-game',
   templateUrl: './in-game.component.html',
@@ -25,7 +26,8 @@ export class InGameComponent implements OnInit {
   constructor(
     private readonly storage: LocalStorage,
     private readonly router: Router,
-    private readonly toastr: ToastrService
+    private readonly toastr: ToastrService,
+    private readonly sound: SoundService
   ) {}
 
   ngOnInit(): void {
@@ -57,6 +59,7 @@ export class InGameComponent implements OnInit {
 
   // executado recursivamente a cada 300ms ate que exiba toda a sequencia
   displayValue(index, max): void {
+    this.sound.show();
     this.display = this.numList[index];
     this.displayNumbers = true;
 
