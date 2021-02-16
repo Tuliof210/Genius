@@ -1,7 +1,7 @@
 <div class="main-wrapper fade-in">
   <div id="display">
     <p *ngIf="displayNumbers" class="view">{{ display }}</p>
-    <p *ngIf="!displayNumbers" class="view flag-view">...</p>
+    <p *ngIf="!displayNumbers" class="view">_</p>
   </div>
   <key-board [enabled]="enableKeyboard" (pressKey)="getKey($event)"></key-board>
 </div>

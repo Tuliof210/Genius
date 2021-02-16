@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // npm i @ngx-pwa/local-storage
 import { LocalStorage } from '@ngx-pwa/local-storage';
+// npm i ngx-toastr
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'in-game',
@@ -22,7 +24,8 @@ export class InGameComponent implements OnInit {
 
   constructor(
     private readonly storage: LocalStorage,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -90,7 +93,7 @@ export class InGameComponent implements OnInit {
   }
 
   abort(): void {
+    this.toastr.error('Desculpe, ocorreu um erro ao computar sua pontuação');
     this.router.navigate(['']);
-    alert('ops');
   }
 }

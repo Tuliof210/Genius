@@ -76,7 +76,6 @@ export class EndGameComponent implements OnInit {
   abort(): void {
     this.clearScore();
     this.router.navigate(['']);
-    alert('ops');
   }
 
   ngOnDestroy(): void {
