@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-
+// sound
+import { SoundService } from '../../../services/sound.service';
 @Component({
   selector: 'key-board',
   templateUrl: './key-board.component.html',
@@ -11,11 +12,14 @@ export class KeyBoardComponent implements OnInit {
 
   readonly BUTTONS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  constructor() {}
+  constructor(private readonly sound: SoundService) {}
 
   ngOnInit(): void {}
 
   buttonPress(value): void {
-    if (this.enabled) this.pressKey.emit(value);
+    if (this.enabled) {
+      this.sound.btnSound();
+      this.pressKey.emit(value);
+    }
   }
 }

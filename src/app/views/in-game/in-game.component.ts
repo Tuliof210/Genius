@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 // npm i ngx-toastr
 import { ToastrService } from 'ngx-toastr';
-
+// sound
+import { SoundService } from '../../services/sound.service';
 @Component({
   selector: 'in-game',
   templateUrl: './in-game.component.html',
@@ -22,10 +23,14 @@ export class InGameComponent implements OnInit {
   numList: number[]; // => armazena a sequencia atual
   countDown: any; // => armazena o contador
 
+  private readonly delay = 300;
+  private readonly init = 1000;
+
   constructor(
     private readonly storage: LocalStorage,
     private readonly router: Router,
-    private readonly toastr: ToastrService
+    private readonly toastr: ToastrService,
+    private readonly sound: SoundService
   ) {}
 
   ngOnInit(): void {
@@ -42,9 +47,7 @@ export class InGameComponent implements OnInit {
 
   // 1s de espera para o jogador se preparar
   start(): void {
-    setTimeout(() => {
-      this.newRound();
-    }, 1000);
+    setTimeout(() => this.newRound(), this.init);
   }
 
   newRound(): void {
@@ -57,6 +60,7 @@ export class InGameComponent implements OnInit {
 
   // executado recursivamente a cada 300ms ate que exiba toda a sequencia
   displayValue(index, max): void {
+    this.sound.displaySound();
     this.display = this.numList[index];
     this.displayNumbers = true;
 
@@ -64,14 +68,11 @@ export class InGameComponent implements OnInit {
     if (index === max) {
       setTimeout(() => {
         this.displayNumbers = false;
-        this.enableKeyboard = true;
-      }, 300);
+        setTimeout(() => (this.enableKeyboard = true), this.delay);
+      }, this.delay);
 
       this.playsToScore = max;
-    } else
-      setTimeout(() => {
-        this.displayValue(index, max);
-      }, 300);
+    } else setTimeout(() => this.displayValue(index, max), this.delay);
   }
 
   // executado ao receber um novo numero do teclado
@@ -80,7 +81,7 @@ export class InGameComponent implements OnInit {
       this.currentTry += 1;
       if (this.currentTry === this.playsToScore) {
         this.currentScore += 1;
-        this.newRound();
+        setTimeout(() => this.newRound(), this.delay);
       }
     } else this.gameOver();
   }
