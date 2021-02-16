@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpService } from '../../services/http.service';
+// sound
+import { SoundService } from '../../services/sound.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,18 +19,28 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private readonly router: Router,
-    private readonly httpService: HttpService
+    private readonly sound: SoundService
   ) {}
+
+  @HostListener('window:keydown', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.start();
+      return false;
+    }
+  }
 
   ngOnInit(): void {}
 
   // Start game
-  start() {
+  start(): void {
+    this.sound.btnSound();
     this.router.navigate(['play']);
   }
 
   // Show ranking
-  showRanking() {
+  showRanking(): void {
+    this.sound.btnSound();
     this.router.navigate(['ranking']);
   }
 }

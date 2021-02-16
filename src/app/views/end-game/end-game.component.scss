@@ -78,20 +78,12 @@
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {
-  // input
   #user-input {
     width: 90%;
     box-sizing: border-box;
   }
-  #user-input .base-input {
-  }
   #save-score-btn {
     width: 90%;
     box-sizing: border-box;
-    //bottom: 100vh * 0.03;
-  }
-  #save-score-btn .base-btn {
-  }
-  #save-score-btn .base-btn:hover {
   }
 }

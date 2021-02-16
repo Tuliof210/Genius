@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-
+// sound
+import { SoundService } from '../../services/sound.service';
 @Component({
   selector: 'app-rank',
   templateUrl: './rank.component.html',
@@ -16,19 +17,20 @@ export class RankComponent implements OnInit {
     alt: 'Come back btn',
   };
 
-  rankList: any;
-  rankListView: any[];
+  rankList: any; // => dados recebidos do servidor
+  rankListView: any[]; // => dados tratados para exibição
 
   constructor(
     private readonly router: Router,
-    private readonly httpService: HttpService
+    private readonly httpService: HttpService,
+    private readonly sound: SoundService
   ) {}
 
   ngOnInit(): void {
     this.getRanking();
   }
 
-  getRanking() {
+  getRanking(): void {
     this.rankList = [];
     this.httpService
       .GetService('ranking')
@@ -42,7 +44,7 @@ export class RankComponent implements OnInit {
       });
   }
 
-  normalizeData() {
+  normalizeData(): void {
     // Ordenar do maior para o menor
     this.rankList = this.rankList.sort((a, b) => b['score'] - a['score']);
     // Normalizar dados recebidos
@@ -53,13 +55,12 @@ export class RankComponent implements OnInit {
     }));
   }
 
-  goBackHome() {
+  goBackHome(): void {
+    this.sound.btnSound();
     this.router.navigate(['']);
   }
 
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this._ngUnsubscribe.next();
     this._ngUnsubscribe.complete();
   }
