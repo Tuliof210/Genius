@@ -92,7 +92,26 @@
     font-size: $mobileWidth * 0.13;
   }
   #finalScore h3 {
-    margin-top: 50px;
+    margin-top: $mobileHeight * 0.09;
     font-size: 20px;
+  }
+
+  #user-input {
+    bottom: 120px;
+  }
+  #user-input .base-input {
+    width: $mobileWidth * 0.9;
+    height: $height * 0.1;
+    font-size: $mobileWidth * 0.07;
+  }
+
+  #save-score-btn {
+    bottom: 20px;
+    width: $mobileWidth * 0.9;
+  }
+  #save-score-btn .base-btn {
+    width: $mobileWidth * 0.9;
+    height: $height * 0.1;
+    font-size: $mobileWidth * 0.07;
   }
 }
