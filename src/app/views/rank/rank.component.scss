@@ -20,11 +20,7 @@
   color: $default_light_brown;
 }
 
-#come-back {
-  cursor: pointer;
-}
-#come-back img {
-  position: absolute;
+.come-back {
   left: $width * 0.05;
 }
 

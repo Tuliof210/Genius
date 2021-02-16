@@ -18,13 +18,11 @@
 }
 
 // Game ranking icon
-#game-rank {
-  cursor: pointer;
-  position: absolute;
+.game-rank {
   top: $width * 0.05;
   right: $width * 0.05;
 }
-#game-rank img {
+.game-rank img {
   width: $width * 0.08;
 }
 
@@ -49,11 +47,14 @@
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {
+  #game-logo {
+    height: $mobileHeight;
+  }
   #game-logo img {
     box-sizing: border-box;
   }
   #game-btn {
-    width: 85%;
+    width: $mobileWidth * 0.9;
     box-sizing: border-box;
   }
 }

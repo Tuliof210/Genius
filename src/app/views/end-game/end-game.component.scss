@@ -2,13 +2,11 @@
 @import './../../../assets/styles/elements.scss';
 @import './../../../assets/styles/animation.scss';
 
-#close-window {
-  cursor: pointer;
-  position: absolute;
+.close-window {
   top: $width * 0.05;
   right: $width * 0.05;
 }
-#close-window {
+.close-window {
   width: $width * 0.08;
 }
 
