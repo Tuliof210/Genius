@@ -16,8 +16,8 @@ export class RankComponent implements OnInit {
     alt: 'Come back btn',
   };
 
-  rankList: any;
-  rankListView: any[];
+  rankList: any; // => dados recebidos do servidor
+  rankListView: any[]; // => dados tratados para exibição
 
   constructor(
     private readonly router: Router,
@@ -28,7 +28,7 @@ export class RankComponent implements OnInit {
     this.getRanking();
   }
 
-  getRanking() {
+  getRanking(): void {
     this.rankList = [];
     this.httpService
       .GetService('ranking')
@@ -42,7 +42,7 @@ export class RankComponent implements OnInit {
       });
   }
 
-  normalizeData() {
+  normalizeData(): void {
     // Ordenar do maior para o menor
     this.rankList = this.rankList.sort((a, b) => b['score'] - a['score']);
     // Normalizar dados recebidos
@@ -53,13 +53,11 @@ export class RankComponent implements OnInit {
     }));
   }
 
-  goBackHome() {
+  goBackHome(): void {
     this.router.navigate(['']);
   }
 
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this._ngUnsubscribe.next();
     this._ngUnsubscribe.complete();
   }

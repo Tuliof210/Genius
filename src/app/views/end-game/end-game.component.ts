@@ -1,8 +1,11 @@
 import { Component, HostListener, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { HttpService } from '../../services/http.service';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
+// npm i @ngx-pwa/local-storage
+import { LocalStorage } from '@ngx-pwa/local-storage';
+// custom
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'end-game',
@@ -16,11 +19,12 @@ export class EndGameComponent implements OnInit {
     alt: 'Close btn',
   };
 
-  score;
-  userName: string;
+  score: any; // => pontuacao final
+  userName: string; // => nome do jogador
+  disabled: boolean; // => flag para desativar o botao
 
   constructor(
-    private readonly route: ActivatedRoute,
+    private readonly storage: LocalStorage,
     private readonly router: Router,
     private readonly httpService: HttpService
   ) {}
@@ -29,19 +33,26 @@ export class EndGameComponent implements OnInit {
   keyEvent(event: KeyboardEvent) {
     if (event.key === 'Enter' && this.userName) {
       this.saveScore();
-      //return false;
+      return false;
     }
   }
 
   ngOnInit(): void {
-    this.score = parseInt(this.route.snapshot.paramMap.get('score'));
+    this.storage.getItem('score').subscribe((score) => {
+      if (score || score === 0) {
+        this.score = score;
+        this.disabled = false;
+        this.clearScore();
+      } else this.abort();
+    });
   }
 
-  playAgain() {
-    this.router.navigate(['/ranking']);
+  playAgain(): void {
+    this.router.navigate(['']);
   }
 
-  saveScore() {
+  saveScore(): void {
+    this.disabled = true;
     const data = {
       name: this.userName,
       score: this.score,
@@ -53,14 +64,20 @@ export class EndGameComponent implements OnInit {
         takeUntil(this._ngUnsubscribe)
       )
       .subscribe((posted) => {
-        // Add Loader spin
-        this.playAgain();
+        this.router.navigate(['/ranking']);
       });
   }
 
+  clearScore(): void {
+    this.storage.removeItem('score').subscribe((remove) => {});
+  }
+
+  abort(): void {
+    this.clearScore();
+    this.router.navigate(['']);
+  }
+
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this._ngUnsubscribe.next();
     this._ngUnsubscribe.complete();
   }

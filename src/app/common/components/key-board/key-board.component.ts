@@ -6,8 +6,8 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./key-board.component.scss'],
 })
 export class KeyBoardComponent implements OnInit {
-  @Input() canPlay;
-  @Output() sendButtonValue: EventEmitter<number> = new EventEmitter();
+  @Input() enabled;
+  @Output() pressKey: EventEmitter<number> = new EventEmitter();
 
   readonly BUTTONS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -15,7 +15,7 @@ export class KeyBoardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  buttonPress(value) {
-    if (this.canPlay) this.sendButtonValue.emit(value);
+  buttonPress(value): void {
+    if (this.enabled) this.pressKey.emit(value);
   }
 }

@@ -1,11 +1,7 @@
 <div class="main-wrapper fade-in">
   <div id="display">
-    <p *ngIf="showDisplay" class="view">{{ display }}</p>
-    <p *ngIf="!showDisplay" class="view">...</p>
+    <p *ngIf="displayNumbers" class="view">{{ display }}</p>
+    <p *ngIf="!displayNumbers" class="view">_</p>
   </div>
-  <key-board
-    id="keyboard"
-    [canPlay]="canPlay"
-    (sendButtonValue)="getBtnValue($event)"
-  ></key-board>
+  <key-board [enabled]="enableKeyboard" (pressKey)="getKey($event)"></key-board>
 </div>

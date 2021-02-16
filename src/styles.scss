@@ -1,3 +1,6 @@
+// regular style toast
+@import '~ngx-toastr/toastr';
+
 /* You can add global styles to this file, and also import other style files */
 // Screen 360 x 600 => 0,6
 * {
@@ -5,4 +8,9 @@
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+}
+
+//Toastr
+.toast-container {
+  font-family: sans-serif;
 }
