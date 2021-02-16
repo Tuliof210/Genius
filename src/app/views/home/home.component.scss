@@ -29,9 +29,9 @@
 // Game button start
 #game-btn {
   position: absolute;
-  bottom: $height * 0.03;
   display: flex;
   justify-content: center;
+  bottom: $height * 0.03;
 }
 #game-btn .base-btn {
   width: $width * 0.9;
@@ -51,10 +51,17 @@
     height: $mobileHeight;
   }
   #game-logo img {
+    width: $mobileWidth * 0.85;
     box-sizing: border-box;
   }
+
   #game-btn {
     width: $mobileWidth * 0.9;
     box-sizing: border-box;
+  }
+  #game-btn .base-btn {
+    width: $mobileWidth * 0.9;
+    height: $height * 0.1;
+    font-size: $mobileWidth * 0.07;
   }
 }
