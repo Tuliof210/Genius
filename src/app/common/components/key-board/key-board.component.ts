@@ -1,4 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  HostListener,
+} from '@angular/core';
 // sound
 import { SoundService } from '../../../services/sound.service';
 @Component({
@@ -13,6 +20,11 @@ export class KeyBoardComponent implements OnInit {
   readonly BUTTONS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   constructor(private readonly sound: SoundService) {}
+
+  @HostListener('window:keydown', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    event.preventDefault();
+  }
 
   ngOnInit(): void {}
 
