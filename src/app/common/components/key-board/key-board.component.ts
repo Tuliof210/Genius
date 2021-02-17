@@ -23,7 +23,7 @@ export class KeyBoardComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (event.key === 'Enter') event.preventDefault();
+    if (event.key === 'Enter' || event.key === ' ') event.preventDefault();
   }
 
   ngOnInit(): void {}

@@ -13,4 +13,12 @@ describe('SoundService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should play "button sound"', () => {
+    expect(service.btnSound()).toBeUndefined();
+  });
+
+  it('should play "display sound"', () => {
+    expect(service.displaySound()).toBeUndefined();
+  });
 });
