@@ -8,9 +8,8 @@ describe('KeyBoardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ KeyBoardComponent ]
-    })
-    .compileComponents();
+      declarations: [KeyBoardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,9 @@ describe('KeyBoardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should get a value', () => {
+    expect(component.buttonPress(5)).toBeUndefined();
   });
 });

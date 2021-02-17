@@ -23,4 +23,20 @@ describe('EndGameComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should redirect to "Home" screen', () => {
+    expect(component.playAgain()).toBeUndefined();
+  });
+
+  it('should redirect to "Ranking" screen', () => {
+    expect(component.saveScore()).toBeUndefined();
+  });
+
+  it('should clear localStorage', () => {
+    expect(component.clearScore()).toBeUndefined();
+  });
+
+  it('should call "clearScore" and redirect to "Home" screen', () => {
+    expect(component.abort()).toBeUndefined();
+  });
 });
