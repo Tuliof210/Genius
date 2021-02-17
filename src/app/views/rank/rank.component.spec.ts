@@ -23,4 +23,16 @@ describe('RankComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should get the rank list', () => {
+    expect(component.getRanking()).toBeUndefined();
+  });
+
+  it('should normalize "Rank" object', () => {
+    expect(component.normalizeData()).toBeUndefined();
+  });
+
+  it('should go back to "Home" screen', () => {
+    expect(component.goBackHome()).toBeUndefined();
+  });
 });

@@ -23,11 +23,11 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should start the game', () => {
+  it('should redirect to the "In Game" screen', () => {
     expect(component.start()).toBeUndefined();
   });
 
-  it('should redirect to the "ranking" screen ', () => {
+  it('should redirect to the "ranking" screen', () => {
     expect(component.showRanking()).toBeUndefined();
   });
 });
