@@ -60,7 +60,7 @@ describe('InGameComponent', () => {
     expect(component.getKey(5)).toBeUndefined();
   });
 
-  it('should redirect to the "Game Over" screen', () => {
+  it('should redirect to "Game Over" screen', () => {
     expect(component.gameOver()).toBeUndefined();
   });
 
