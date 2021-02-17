@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { RankComponent } from './rank.component';
 
 describe('RankComponent', () => {
@@ -8,9 +8,9 @@ describe('RankComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RankComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [RankComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
