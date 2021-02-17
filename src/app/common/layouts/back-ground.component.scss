@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $default_gray;
   background: linear-gradient(to bottom, $fromColor, $toColor);
   min-height: 100vh;
 }
@@ -23,6 +22,7 @@
 @media screen and (max-width: $width) {
   .app-wrapper,
   .app-background {
-    width: 100%;
+    width: $mobileWidth;
+    height: $mobileHeight;
   }
 }
