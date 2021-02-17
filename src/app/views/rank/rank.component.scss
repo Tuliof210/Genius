@@ -9,7 +9,7 @@
 .header {
   position: relative;
   margin-top: $height * 0.04;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   width: 100%;
 }
 .header h1 {
@@ -20,11 +20,7 @@
   color: $default_light_brown;
 }
 
-#come-back {
-  cursor: pointer;
-}
-#come-back img {
-  position: absolute;
+.come-back {
   left: $width * 0.05;
 }
 
@@ -51,23 +47,58 @@
 }
 .user-position {
   text-align: right;
-  padding-right: 20px;
+  padding-right: $width * 0.05;
+  width: $width * 0.12;
 }
 .user-name {
   text-align: left;
-  padding-left: 20px;
-  padding-right: 10px;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left: 0px;
+  padding-right: $width * 0.02;
 }
 .user-score {
   text-align: right;
-  padding-right: 25px;
+  padding-right: $width * 0.05;
 }
 
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {
+  .come-back {
+    width: 25px;
+    height: 25px;
+  }
+  .come-back img {
+    width: 25px;
+    height: 25px;
+  }
+  .rank-wrapper {
+    height: $mobileHeight * 0.9;
+  }
+  .header {
+    padding-bottom: $mobileHeight * 0.05;
+  }
+  .header h1 {
+    font-size: $mobileWidth * 0.066;
+  }
+  .row > h1 {
+    font-size: $mobileWidth * 0.066;
+  }
+  .list-players {
+    max-height: $mobileHeight * 0.82;
+  }
+
+  .user-position {
+    padding-right: $mobileWidth * 0.05;
+    width: $mobileWidth * 0.12;
+  }
+  .user-name {
+    padding-left: 0px;
+    padding-right: $mobileWidth * 0.02;
+  }
+  .user-score {
+    padding-right: $mobileWidth * 0.05;
+  }
 }

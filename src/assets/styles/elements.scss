@@ -21,9 +21,11 @@ $shadow: 1px 1px 10px $default_shadowcolor;
 $btn_shadow: 1px 1px 3px $default_shadowcolor;
 
 // proportions [ figma 360 x 600 => 0,6]
-
 $width: 500px;
 $height: $width / 0.6;
+
+$mobileWidth: 100vw;
+$mobileHeight: 100vh;
 
 // default font
 $FontMedium: 'Roboto';
@@ -37,6 +39,13 @@ $FontLight: 'Roboto Light';
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+}
+
+.nav-btn {
+  z-index: 1000;
+  cursor: pointer;
+  position: absolute;
 }
 
 // button base
@@ -90,3 +99,11 @@ $FontLight: 'Roboto Light';
   //margin-top: 63px;
 }
 /*=====================================================*/
+
+// DEFAULT MEDIA QUERIES
+@media screen and (max-width: $width) {
+  .main-wrapper {
+    width: $mobileWidth;
+    height: $mobileHeight;
+  }
+}

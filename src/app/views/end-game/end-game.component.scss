@@ -2,13 +2,9 @@
 @import './../../../assets/styles/elements.scss';
 @import './../../../assets/styles/animation.scss';
 
-#close-window {
-  cursor: pointer;
-  position: absolute;
+.close-window {
   top: $width * 0.05;
   right: $width * 0.05;
-}
-#close-window {
   width: $width * 0.08;
 }
 
@@ -78,12 +74,54 @@
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {
+  .close-window {
+    // top: $width * 0.05;
+    // right: $width * 0.05;
+    width: 25px;
+    height: 25px;
+  }
+  .close-window img {
+    width: 25px;
+    height: 25px;
+  }
   #user-input {
-    width: 90%;
+    width: $mobileWidth * 0.9;
     box-sizing: border-box;
   }
   #save-score-btn {
-    width: 90%;
+    width: $mobileWidth * 0.9;
     box-sizing: border-box;
+  }
+  #finalScore {
+    height: $mobileHeight;
+  }
+  #finalScore h1 {
+    font-size: 100px;
+  }
+  #finalScore h2 {
+    font-size: $mobileWidth * 0.13;
+  }
+  #finalScore h3 {
+    margin-top: $mobileHeight * 0.09;
+    font-size: 20px;
+  }
+
+  #user-input {
+    bottom: 120px;
+  }
+  #user-input .base-input {
+    width: $mobileWidth * 0.9;
+    height: $height * 0.1;
+    font-size: $mobileWidth * 0.07;
+  }
+
+  #save-score-btn {
+    bottom: 20px;
+    width: $mobileWidth * 0.9;
+  }
+  #save-score-btn .base-btn {
+    width: $mobileWidth * 0.9;
+    height: $height * 0.1;
+    font-size: $mobileWidth * 0.07;
   }
 }

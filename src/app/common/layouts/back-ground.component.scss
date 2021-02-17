@@ -22,6 +22,7 @@
 @media screen and (max-width: $width) {
   .app-wrapper,
   .app-background {
-    width: 100%;
+    width: $mobileWidth;
+    height: $mobileHeight;
   }
 }
