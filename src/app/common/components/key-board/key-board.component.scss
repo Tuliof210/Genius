@@ -3,22 +3,18 @@
 @import '../../../../assets/styles/elements.scss';
 
 #keyboard {
-  width: 450px;
-
-  position: relative;
-  left: auto;
-  right: auto;
-  bottom: 0;
+  width: $width * 0.9;
   margin: auto;
   display: grid;
 
-  grid-template-columns: repeat(3, 150px);
-  grid-template-rows: repeat(3, 150px);
+  grid-template-columns: repeat(3, $width * 0.3);
+  grid-template-rows: repeat(3, $width * 0.3);
 
-  margin: 20px auto 0;
+  margin: 0 auto;
+  margin-top: $width * 0.04;
   border: 3px solid $default_blue;
 
-  transition-property: all;
+  transition-property: opacity;
   transition-duration: 0.3s;
 }
 
@@ -45,4 +41,25 @@
 }
 .disabled .keyboard-btn:active {
   background-color: $default_dark_blue;
+}
+
+// MEDIA QUERIES
+//===============================================
+@media screen and (max-width: $width) {
+  #keyboard {
+    width: $mobileWidth * 0.69;
+    grid-template-columns: repeat(3, $mobileWidth * 0.23);
+    grid-template-rows: repeat(3, $mobileWidth * 0.23);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .keyboard-btn {
+    font-size: $mobileWidth * 0.12;
+  }
 }

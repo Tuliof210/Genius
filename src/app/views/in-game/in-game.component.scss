@@ -36,12 +36,18 @@
 // MEDIA QUERIES
 //===============================================
 @media screen and (max-width: $width) {
+  .main-wrapper {
+    height: $mobileHeight * 0.8;
+  }
   #display {
-    width: $mobileWidth * 0.26;
+    width: $mobileWidth * 0.25;
     padding: $mobileWidth * 0.1;
+
+    margin-top: $mobileHeight * 0.1;
+    margin-bottom: $mobileHeight * 0.1;
   }
   .view {
-    font-size: $mobileWidth * 0.26;
-    line-height: $mobileWidth * 0.26;
+    font-size: $mobileWidth * 0.25;
+    line-height: $mobileWidth * 0.25;
   }
 }
